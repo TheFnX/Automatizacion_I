@@ -12,11 +12,6 @@ public class SearchEnginePage extends BasePage {
     public SearchEnginePage(WebDriver webDriver) {
         super(webDriver);
     }
-    private void typeAndEnter(String text, By elementBy){
-        WebElement element = webDriver.findElement(elementBy);
-        element.sendKeys(text);
-        element.sendKeys(Keys.ENTER);
-    }
 
     public SelectFalabellaPage search(String wordSearch){
         typeAndEnter(wordSearch, inputSearch);

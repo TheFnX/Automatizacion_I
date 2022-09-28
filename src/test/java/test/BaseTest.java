@@ -66,6 +66,11 @@ public class BaseTest {
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
     }*/
 
+    /*public void close(){
+        WebElement closeShadowRoot = webDriver.findElement(By.cssSelector("//div[@class='airship-html-prompt-shadow']"));
+
+    }*/
+
     public void searchOnFalabellaPage(){
         WebElement inputFalabellaSearch = webDriver.findElement(By.xpath("//*[@id='testId-SearchBar-Input']"));
         inputFalabellaSearch.sendKeys("Monitor");

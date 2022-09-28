@@ -13,12 +13,12 @@ public class ChoosePaymentPage extends BasePage {
         super(webDriver);
     }
 
-    public paymentDateAs(String giftCardNumber,
-                         String giftCardSecurityCode){
+    public GiftCardMessagePage paymentDateAs(String giftCardNumber,
+                                             String giftCardSecurityCode){
         webDriver.findElement(giftCardButton).click();
         selectByVisibleText(giftCardNumber, inputGiftCardNumber);
         selectByVisibleText(giftCardSecurityCode, inputGiftCardSecurityCode);
         webDriver.findElement(addCodeButton).click();
-
+        return new GiftCardMessagePage(webDriver);
     }
 }

@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SearchOnFalabellaPage extends BasePage{
 
@@ -11,7 +12,7 @@ public class SearchOnFalabellaPage extends BasePage{
     }
 
     public SelectProductPage searchOnFalabellaAs(String inputWordSearch){
-       webDriver.findElement(inputFalabellaSearch).sendKeys(inputWordSearch);
+       typeAndEnter(inputWordSearch, inputFalabellaSearch);
        return new SelectProductPage(webDriver);
     }
 }

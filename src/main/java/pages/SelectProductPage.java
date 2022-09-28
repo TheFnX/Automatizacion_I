@@ -2,10 +2,11 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SelectProductPage extends BasePage{
 
-    private By selectProduct = By.id("testId-pod-image-20877483");
+    private By selectProduct = By.id("");
     public SelectProductPage(WebDriver webDriver) {
         super(webDriver);
     }
