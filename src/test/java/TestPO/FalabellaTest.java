@@ -3,6 +3,7 @@ package TestPO;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.*;
 
 public class FalabellaTest {
@@ -15,6 +16,7 @@ public class FalabellaTest {
         options.addArguments("--incognito");
         webDriver = new ChromeDriver(options);
         webDriver.get("https://www.google.com/");
+        WebDriverWait wait = new WebDriverWait(webDriver, 20);
         webDriver.manage().window().maximize();
 
         SearchEnginePage searchPage = new SearchEnginePage(webDriver);

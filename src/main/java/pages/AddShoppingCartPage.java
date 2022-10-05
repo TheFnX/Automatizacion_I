@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class AddShoppingCartPage extends BasePage{
 
-    private By addProductButton = By.xpath("linkButton");
+    private By addProductButton = By.xpath("//button[normalize-space()='Agregar a la Bolsa']");
     public AddShoppingCartPage(WebDriver webDriver) {
         super(webDriver);
     }
