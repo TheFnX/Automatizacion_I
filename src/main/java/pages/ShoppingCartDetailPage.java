@@ -21,6 +21,7 @@ public class ShoppingCartDetailPage extends BasePage{
         webDriver.findElement(openSelectWarranty).click();
         webDriver.findElement(selectWarranty).click();
         webDriver.findElement(goShoppingButton).click();
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return new DispatchOptionsPage(webDriver);
     }
 }

@@ -18,7 +18,7 @@ public class BasePage {
         Select toSelect = new Select(webDriver.findElement(selectBy));
         toSelect.selectByVisibleText(option);
     }
-     protected void typeAndEnter(String text, By elementBy){
+    protected void typeAndEnter(String text, By elementBy) {
         WebElement element = webDriver.findElement(elementBy);
         element.sendKeys(text);
         element.sendKeys(Keys.ENTER);

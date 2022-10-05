@@ -1,23 +1,18 @@
 package TestPO;
 
+import base.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import pages.*;
 
-public class FalabellaTest {
+import java.util.concurrent.TimeUnit;
 
+public class FalabellaTest extends BaseTest {
     private WebDriver webDriver;
 
-    public void setUp() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito");
-        webDriver = new ChromeDriver(options);
-        webDriver.get("https://www.google.com/");
-        webDriver.manage().window().maximize();
-
+    @Test
+    public void setUp() {
         SearchEnginePage searchPage = new SearchEnginePage(webDriver);
         SelectFalabellaPage selectFalabella = searchPage.search("Falabella");
         SearchOnFalabellaPage searchOnFalabella = selectFalabella.selectPageAs();
@@ -31,13 +26,10 @@ public class FalabellaTest {
         ChoosePaymentPage choosePayment = deliveryDateSelect.deliveryDateSelectAs("Entre Martes 04/10 y Lunes 10/10");
         GiftCardMessagePage giftCardMessage = choosePayment.paymentDateAs("1234567891","12345");
 
-        webDriver.quit();
+        GiftCardMessagePage gift = new GiftCardMessagePage(webDriver);
+        Assert.assertTrue(giftCardMessage.giftCardMessageDisplayed());
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
-    public static void main(String arg[]) throws InterruptedException {
-        FalabellaTest falabellaTest = new FalabellaTest();
-        falabellaTest.setUp();
-    }
-
 }
 
 

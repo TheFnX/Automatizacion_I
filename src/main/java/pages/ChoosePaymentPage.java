@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class ChoosePaymentPage extends BasePage {
 
     private By giftCardButton = By.cssSelector(".fbra_giftcard_redesign.fbra_appContainer.fbra_test_appContainer");
@@ -19,6 +21,7 @@ public class ChoosePaymentPage extends BasePage {
         selectByVisibleText(giftCardNumber, inputGiftCardNumber);
         selectByVisibleText(giftCardSecurityCode, inputGiftCardSecurityCode);
         webDriver.findElement(addCodeButton).click();
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return new GiftCardMessagePage(webDriver);
     }
 }

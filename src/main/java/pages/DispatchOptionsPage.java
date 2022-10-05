@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class DispatchOptionsPage extends BasePage{
 
     private By departmentSelect = By.id("region");
@@ -22,6 +24,7 @@ public class DispatchOptionsPage extends BasePage{
         selectByVisibleText(country, countrySelect);
         selectByVisibleText(neighborhood, neighborhoodSelect);
         webDriver.findElement(continueButton).click();
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return new DispatchDataPage(webDriver);
     }
 }
