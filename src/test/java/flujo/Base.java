@@ -1,4 +1,4 @@
-package test;
+package flujo;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -9,9 +9,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.awt.*;
-import java.awt.event.InputEvent;
 
-public class BaseTest {
+public class Base {
 
     private WebDriver webDriver;
 
@@ -159,8 +158,8 @@ public class BaseTest {
     }
 
     public static void main(String arg[]) throws InterruptedException, AWTException {
-        BaseTest baseTest = new BaseTest();
-        baseTest.setUp();
+        Base base = new Base();
+        base.setUp();
 
     }
 }
