@@ -10,13 +10,12 @@ public class FalabellaTest {
 
     private WebDriver webDriver;
 
-    public void setUp() {
+    public void setUp() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
         webDriver = new ChromeDriver(options);
         webDriver.get("https://www.google.com/");
-        WebDriverWait wait = new WebDriverWait(webDriver, 20);
         webDriver.manage().window().maximize();
 
         SearchEnginePage searchPage = new SearchEnginePage(webDriver);
@@ -34,7 +33,7 @@ public class FalabellaTest {
 
         webDriver.quit();
     }
-    public static void main(String arg[]){
+    public static void main(String arg[]) throws InterruptedException {
         FalabellaTest falabellaTest = new FalabellaTest();
         falabellaTest.setUp();
     }

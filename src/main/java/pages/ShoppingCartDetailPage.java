@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class ShoppingCartDetailPage extends BasePage{
 
     private By increaseProductButton = By.xpath("//button[contains(text(),'+')]");
@@ -14,6 +16,7 @@ public class ShoppingCartDetailPage extends BasePage{
     }
 
     public DispatchOptionsPage selectDetailAs(){
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         webDriver.findElement(increaseProductButton).click();
         webDriver.findElement(openSelectWarranty).click();
         webDriver.findElement(selectWarranty).click();
